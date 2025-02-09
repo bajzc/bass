@@ -1,3 +1,4 @@
+// Sparse Conditional Constant Propagation
 #include <ostream>
 
 #include "llvm/Pass.h"
@@ -150,9 +151,6 @@ private:
         for (auto &BB: F) {
             for (auto Successor_BB: successors(&BB)) {
                 ExecFlag[std::pair(&BB, Successor_BB)] = false;
-            }
-            for (auto &I: BB) {
-                // inspect variable instruction caused by parameters
             }
         }
         Visited.clear();
