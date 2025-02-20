@@ -1,8 +1,8 @@
 ; This is a basic correctness check for constant propagation.  The add
 ; instruction and phi instruction should be eliminated.
 
-; RUN: opt < %s -passes=sccp -S | not grep phi
-; RUN: opt < %s -passes=sccp -S | not grep add
+; RUN: opt < %s -load-pass-plugin %S/../../bin/sccp.dylib -passes="b-sccp" -S | not grep phi
+; RUN: opt < %s -load-pass-plugin %S/../../bin/sccp.dylib -passes="b-sccp" -S | not grep add
 
 define i128 @test(i1 %B) {
 	br i1 %B, label %BB1, label %BB2
