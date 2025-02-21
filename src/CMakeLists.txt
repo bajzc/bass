@@ -1,1 +1,2 @@
-add_subdirectory(SCCP)
+add_llvm_pass_plugin(sccp SparseConditionalConstantPropagation/SCCP.cpp)
+add_llvm_pass_plugin(tc TailCall/TC.cpp)
