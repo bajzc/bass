@@ -24,7 +24,6 @@ private:
         lattice_t Tag = UNDEFINED;
         std::optional<Constant*> ConstValue;
 
-
         ValueLattice() = default;
 
         explicit ValueLattice(lattice_t Tag) : Tag(Tag) {}
